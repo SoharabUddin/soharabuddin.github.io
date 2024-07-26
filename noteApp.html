@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App Project Documentation</title>
+    <link rel="stylesheet" href="noteApp.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Notes App</h1>
+            <p>A comprehensive Android application for managing notes.</p>
+        </header>
+        
+        <section class="overview">
+            <h2>Project Overview</h2>
+            <p>The Notes App is an Android application developed using Kotlin, designed to allow users to create, view, edit, and delete notes. It uses RecyclerView to display notes and offers an intuitive UI for managing note data.</p>
+        </section>
+        
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Add and Edit Notes</li>
+                <li>Delete Notes with Confirmation</li>
+                <li>Persistent Storage using SharedPreferences</li>
+                <li>Dynamic UI Updates</li>
+            </ul>
+        </section>
+        
+        <section class="components">
+            <h2>Components</h2>
+            
+            <h3>MainActivity.kt</h3>
+            <p>Manages the main user interface for displaying the list of notes. Initializes RecyclerView, sets up the adapter, and handles navigation to AddNoteActivity.</p>
+            <ul>
+                <li><strong>onCreate()</strong>: Initializes views and loads notes from SharedPreferences.</li>
+                <li><strong>setupRecyclerView()</strong>: Configures RecyclerView with the adapter.</li>
+                <li><strong>onNoteItemClick()</strong>: Handles item click events to edit notes.</li>
+                <li><strong>saveNotesToPreferences()</strong>: Saves notes to SharedPreferences.</li>
+            </ul>
+            
+            <h3>AddNoteActivity.kt</h3>
+            <p>Provides a form for adding or editing notes. Allows users to input a title and content, with options to save or delete notes.</p>
+            <ul>
+                <li><strong>onCreate()</strong>: Sets up the activity and determines whether the user is adding a new note or editing an existing one.</li>
+                <li><strong>onSaveButtonClicked()</strong>: Saves a new note or updates an existing one.</li>
+                <li><strong>onDeleteButtonClicked()</strong>: Deletes the current note after user confirmation.</li>
+            </ul>
+            
+            <h3>NotesAdapterClass.kt</h3>
+            <p>Custom adapter for displaying notes in a RecyclerView. Manages view binding and user interactions for each note item.</p>
+            <ul>
+                <li><strong>onCreateViewHolder()</strong>: Inflates the layout for note items.</li>
+                <li><strong>onBindViewHolder()</strong>: Binds data to the view holder.</li>
+                <li><strong>showDeleteConfirmationDialog()</strong>: Displays a confirmation dialog before deleting a note.</li>
+            </ul>
+            
+            <h3>Constant.kt</h3>
+            <p>Contains a singleton object for globally managing the list of notes. Provides a centralized location for note data storage.</p>
+            <ul>
+                <li><strong>notes</strong>: An ArrayList of NoteDataClass objects, accessible throughout the application.</li>
+            </ul>
+        </section>
+        
+        <section class="technologies">
+            <h2>Technologies Used</h2>
+            <ul>
+                <li>Kotlin</li>
+                <li>RecyclerView</li>
+                <li>SharedPreferences</li>
+                <li>Gson</li>
+            </ul>
+        </section>
+        
+        <section class="design">
+            <h2>Design Considerations</h2>
+            <ul>
+                <li>User Experience: Clean and intuitive interface for managing notes.</li>
+                <li>Data Management: Efficient handling of note data with real-time updates and persistent storage.</li>
+                <li>Modularity: Separation of concerns with distinct activities and adapters.</li>
+            </ul>
+        </section>
+        
+        <section class="improvements">
+            <h2>Future Improvements</h2>
+            <ul>
+                <li>Search Functionality</li>
+                <li>Category Management</li>
+                <li>Cloud Sync</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>For more information, please visit the <a href="#">project repository</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
