@@ -64,3 +64,29 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.screenshot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem; /* Space between images */
+}
+
+.screenshot {
+    flex: 1 1 calc(33.333% - 2rem); /* 3 images in a row with space for gaps */
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .screenshot {
+        flex: 1 1 calc(50% - 2rem); /* 2 images in a row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .screenshot {
+        flex: 1 1 100%; /* 1 image per row on very small screens */
+    }
+}
