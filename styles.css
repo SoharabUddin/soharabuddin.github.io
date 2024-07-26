@@ -129,7 +129,7 @@ section h2 {
 
 .screenshot {
     flex: 1 1 calc(33.333% - 2rem); /* 3 images in a row with space for gaps */
-    max-width: 100%;
+    max-width: calc(33.333% - 2rem);
     height: auto;
     border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -148,12 +148,14 @@ section h2 {
 @media (max-width: 768px) {
     .screenshot {
         flex: 1 1 calc(50% - 2rem); /* 2 images in a row on smaller screens */
+        max-width: calc(50% - 2rem);
     }
 }
 
 @media (max-width: 480px) {
     .screenshot {
         flex: 1 1 100%; /* 1 image per row on very small screens */
+        max-width: 100%;
     }
 }
 
