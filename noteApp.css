@@ -26,6 +26,11 @@
     border-radius: 5px;
 }
 
+/* Ensure the last image maintains its original size */
+.screenshot-container .screenshot:last-child {
+    flex: 0 1 auto; /* Override flex properties to maintain original size */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .screenshot {
