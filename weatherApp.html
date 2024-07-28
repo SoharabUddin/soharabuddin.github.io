@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Project Documentation</title>
+    <link rel="stylesheet" href="weatherApp.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather App</h1>
+            <p>A comprehensive Android application for real-time weather updates.</p>
+        </header>
+        
+        <section class="overview">
+            <h2>Project Overview</h2>
+            <p>The Weather App is an Android application developed using Kotlin that provides real-time weather information for any specified city. It leverages the WeatherAPI to fetch and display current weather data, including temperature, wind speed, humidity, and weather conditions.</p>
+        </section>
+        
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Real-time Weather Data</li>
+                <li>Error Handling</li>
+                <li>LiveData and ViewModel</li>
+                <li>Retrofit</li>
+                <li>Gson</li>
+                <li>Responsive UI</li>
+            </ul>
+        </section>
+        
+        <section class="technologies">
+            <h2>Technologies Used</h2>
+            <ul>
+                <li>Kotlin</li>
+                <li>Android Architecture Components</li>
+                <li>Retrofit</li>
+                <li>Gson</li>
+                <li>WeatherAPI</li>
+            </ul>
+        </section>
+        
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <p>The Weather App fetches real-time weather data from the WeatherAPI based on the user's input city. The main components involved in this process are:</p>
+            <ul>
+                <li><strong>User Input:</strong> The user enters the city name in the app.</li>
+                <li><strong>API Request:</strong> The app sends a request to the WeatherAPI using Retrofit, including the city name and API key.</li>
+                <li><strong>Data Processing:</strong> The API response is processed using Gson to convert JSON data into Kotlin data classes.</li>
+                <li><strong>LiveData Update:</strong> The processed data is posted to LiveData objects, which the UI observes for changes.</li>
+                <li><strong>UI Update:</strong> The UI components display the updated weather data in a user-friendly format.</li>
+            </ul>
+        </section>
+        
+        <section class="components">
+            <h2>Components</h2>
+            
+            <h3>MainViewModel.kt</h3>
+            <p>The <strong>MainViewModel</strong> class is responsible for managing the data for the Weather App. It uses LiveData to hold the current weather data and handles the API requests to fetch this data.</p>
+            <ul>
+                <li><strong>getWeatherData(city: String):</strong> Initiates the API request to fetch weather data for the specified city.</li>
+                <li><strong>onResponse(call: Call&lt;CurrentWeatherResponse&gt;, response: Response&lt;CurrentWeatherResponse&gt;):</strong> Handles the API response and updates LiveData objects accordingly.</li>
+                <li><strong>onFailure(call: Call&lt;CurrentWeatherResponse&gt;, t: Throwable):</strong> Handles errors during the API request and updates the error LiveData object.</li>
+            </ul>
+            
+            <h3>ServiceBuilder.kt</h3>
+            <p>The <strong>ServiceBuilder</strong> object provides the Retrofit instance configured to communicate with the WeatherAPI.</p>
+            <ul>
+                <li><strong>createService(service: Class&lt;T&gt;): T:</strong> Creates and returns a Retrofit service instance for the specified service interface.</li>
+            </ul>
+            
+            <h3>WeaterAPI.kt</h3>
+            <p>The <strong>WeaterAPI</strong> interface defines the API endpoints for the WeatherAPI service.</p>
+            <ul>
+                <li><strong>getCurrentWeather(query: String, apiKey: String, language: String): Call&lt;CurrentWeatherResponse&gt;:</strong> Defines the API endpoint to fetch current weather data.</li>
+            </ul>
+            
+            <h3>CurrentWeatherResponse.kt</h3>
+            <p>The <strong>CurrentWeatherResponse</strong> data class represents the structure of the weather data returned by the WeatherAPI.</p>
+            <ul>
+                <li><strong>Location:</strong> Nested data class representing the location details.</li>
+                <li><strong>Current:</strong> Nested data class representing the current weather details.</li>
+            </ul>
+            
+            <h3>ErrorResponse.kt</h3>
+            <p>The <strong>ErrorResponse</strong> data class represents the structure of error messages returned by the WeatherAPI.</p>
+            <ul>
+                <li><strong>ErrorDetails:</strong> Nested data class representing the details of the error.</li>
+            </ul>
+        </section>
+        
+        <section class="future-improvements">
+            <h2>Future Improvements</h2>
+            <ul>
+                <li>Search Functionality</li>
+                <li>Weather Forecast</li>
+                <li>Localization</li>
+                <li>UI Enhancements</li>
+                <li>Notification Alerts</li>
+            </ul>
+        </section>
+        
+        <section class="screenshots">
+            <h2>Screenshots</h2>
+            <div class="gallery">
+                <img src="screenshot1.png" alt="Screenshot 1">
+                <img src="screenshot2.png" alt="Screenshot 2">
+                <img src="screenshot3.png" alt="Screenshot 3">
+                <!-- Add more screenshots as needed -->
+            </div>
+        </section>
+        
+        <footer>
+            <p>For more information, please visit the <a href="#">project repository</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
