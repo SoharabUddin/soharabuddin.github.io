@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management App Documentation</title>
+    <link rel="stylesheet" href="productManagement.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Management App</h1>
+            <p>An Android application for managing products, developed using Kotlin.</p>
+        </header>
+        
+        <section class="overview">
+            <h2>Project Overview</h2>
+            <p>The Product Management App is an Android application that allows users to manage products. The app includes features like adding, editing, and deleting products, user authentication, live product search, and a navigation drawer menu.</p>
+        </section>
+        
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Add, Edit, and Delete Products using Retrofit</li>
+                <li>User Authentication (Login, Signup, Logout)</li>
+                <li>Profile View with Photo Upload</li>
+                <li>Live Product Search in RecyclerView</li>
+                <li>Drawer Navigation Menu</li>
+                <li>Alert Popup for Product Addition with Image Upload</li>
+            </ul>
+        </section>
+        
+        <section class="components">
+            <h2>Components</h2>
+            
+            <h3>MainActivity.kt</h3>
+            <p>Manages the main interface, displaying the list of products and handling user navigation.</p>
+            <ul>
+                <li><strong>onCreate()</strong>: Initializes views and sets up the navigation drawer.</li>
+                <li><strong>setupRecyclerView()</strong>: Configures RecyclerView for displaying products.</li>
+                <li><strong>onProductItemClick()</strong>: Handles product item click events for editing.</li>
+            </ul>
+            
+            <h3>ProductAdapter.kt</h3>
+            <p>Custom adapter for managing product data in a RecyclerView. Handles the binding of product information to view holders.</p>
+            <ul>
+                <li><strong>onCreateViewHolder()</strong>: Inflates the layout for product items.</li>
+                <li><strong>onBindViewHolder()</strong>: Binds product data to the view holder.</li>
+                <li><strong>deleteProduct()</strong>: Deletes a product from the list.</li>
+            </ul>
+            
+            <h3>LoginActivity.kt</h3>
+            <p>Manages user authentication, including login and signup functionalities.</p>
+            <ul>
+                <li><strong>onCreate()</strong>: Sets up the login and signup UI.</li>
+                <li><strong>onLoginButtonClicked()</strong>: Authenticates user credentials.</li>
+                <li><strong>onSignupButtonClicked()</strong>: Registers a new user.</li>
+            </ul>
+            
+            <h3>ProfileActivity.kt</h3>
+            <p>Displays and allows editing of user profile information, including photo upload.</p>
+            <ul>
+                <li><strong>onCreate()</strong>: Loads user profile data and sets up the photo upload functionality.</li>
+                <li><strong>onSaveProfileClicked()</strong>: Saves updated profile information.</li>
+            </ul>
+        </section>
+        
+        <section class="technologies">
+            <h2>Technologies Used</h2>
+            <ul>
+                <li>Kotlin</li>
+                <li>Retrofit</li>
+                <li>RecyclerView</li>
+                <li>Navigation Drawer</li>
+                <li>Glide (for image loading)</li>
+            </ul>
+        </section>
+        
+        <section class="design">
+            <h2>Design Considerations</h2>
+            <ul>
+                <li>User Experience: Intuitive and seamless product management interface.</li>
+                <li>Data Handling: Efficient data retrieval and manipulation with Retrofit.</li>
+                <li>Security: Secure user authentication with Firebase.</li>
+            </ul>
+        </section>
+        
+        <!-- Screenshot Section -->
+        <section class="screenshots">
+            <h2>Screenshots</h2>
+            <div class="gallery">
+                <img src="Images/ProductHub/frontView.jpg" alt="frontView" class="screenshot">
+                <img src="Images/ProductHub/drawerSignedIn.jpg" alt="drawerSignedIn" class="screenshot">
+                <img src="Images/ProductHub/signUpPage.jpg" alt="signUpPage" class="screenshot">
+                <img src="Images/ProductHub/signinPage.jpg" alt="signUpPage" class="screenshot">
+                <img src="Images/ProductHub/liveSearch.jpg" alt="signUpPage" class="screenshot">
+                <img src="Images/ProductHub/imageUpload.jpg" alt="signUpPage" class="screenshot">
+                <img src="Images/ProductHub/drawerSignedIn.jpg" alt="signUpPage" class="screenshot">
+                <!-- Add more screenshots as needed -->
+            </div>
+        </section>
+        
+        <section class="improvements">
+            <h2>Future Improvements</h2>
+            <ul>
+                <li>Enhanced Search Functionality</li>
+                <li>Product Categorization</li>
+                <li>Integration with Payment Gateway</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>For more information, please visit the <a href="#">project repository</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
